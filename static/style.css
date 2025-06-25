@@ -63,3 +63,67 @@ body, html {
     background-color: white;
     color: black;
 }
+.about-section {
+  padding: 80px 50px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-section .highlight {
+  color: crimson;
+}
+
+.about-section .tagline {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.about-content ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-content li::before {
+  content: "✔ ";
+  color: crimson;
+  font-weight: bold;
+}
+
+.about-box {
+  max-width: 600px;
+  text-align: left;
+}
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid crimson;
+  color: crimson;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: crimson;
+  color: white;
+}
+
