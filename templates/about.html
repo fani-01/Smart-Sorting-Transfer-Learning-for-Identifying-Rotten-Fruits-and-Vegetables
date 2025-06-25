@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | NutriGaze</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div><strong>NUTRIGAZE</strong></div>
+    <div>
+      <a href="/">Home</a>
+      <a href="/about" class="active">About</a>
+      <a href="/predict">Predict</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>Learn More <span class="highlight">About Us</span></h2>
+    <p class="tagline">NutriGaze is a pioneering organization dedicated to enhancing the quality and safety of your fruits and vegetables.</p>
+
+    <div class="about-content">
+      <ul>
+        <li>✔ Comprehensive analysis and grading of fruits and vegetables based on ripeness and nutritional content.</li>
+        <li>✔ Continuous monitoring of produce freshness from farm to table.</li>
+        <li>✔ Innovative solutions to minimize food waste by identifying and separating rotten produce early in the supply chain.</li>
+      </ul>
+
+      <div class="about-box">
+        <p>
+          Our team is our greatest asset. We are a diverse group of experts in fields such as agricultural science, data analytics, software engineering, and food technology.
+          Together, we bring a wealth of knowledge and experience to tackle the challenges of food quality and safety.
+        </p>
+        <a class="btn-outline" href="#">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
