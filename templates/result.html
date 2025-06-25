@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result | NutriGaze</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <div><strong>NUTRIGAZE</strong></div>
+    <div>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/predict" class="active">Predict</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h2>Prediction Result</h2>
+    <p><strong>Prediction:</strong> {{ prediction }}</p>
+    <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Uploaded Image" width="200px">
+  </div>
+</body>
+</html>
