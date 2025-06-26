@@ -10,6 +10,21 @@ model = tf.keras.models.load_model('healthy_vs_rotten_keras.ipynb')
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+@app.route('/predict', methods=['GET', 'POST'])
+def output():
+    if request.method == 'POST':
+        f = request.files['pc_image']
+        img_path = "static/uploads/" + f.filename
+        f.save(img_path)
+
+        # Preprocess the image
+        img = load_img(img_path, target_size=(224, 224))
+        image_array = np.array(img)
+        image_array = np.expand_dims(image_array, axis=0)
+
+        # Predict
+        pred = np.argmax(model.predict(image_array), axis=1)
+             
 index = ['Apple_Healthy (0)', 'Apple_Rotten (1)', 'Banana_Healthy (2)', 'Banana_Rotten (3)',
          'Bellpepper_Healthy (4)', 'Bellpepper_Rotten (5)', 'Carrot_Healthy (6)', 'Carrot_Rotten (7)',
          'Cucumber_Healthy (8)', 'Cucumber_Rotten (9)', 'Grape_Healthy (10)', 'Grape_Rotten (11)',
@@ -17,6 +32,11 @@ index = ['Apple_Healthy (0)', 'Apple_Rotten (1)', 'Banana_Healthy (2)', 'Banana_
          'Mango_Healthy (16)', 'Mango_Rotten (17)', 'Orange_Healthy (18)', 'Orange_Rotten (19)',
          'Pomegranate_Healthy (20)', 'Pomegranate_Rotten (21)', 'Potato_Healthy (22)', 'Potato_Rotten (23)',
          'Strawberry_Healthy (24)', 'Strawberry_Rotten (25)', 'Tomato_Healthy (26)', 'Tomato_Rotten (27)']
+
+prediction = index[int(pred)]
+print("prediction")
+return render_template("portfolio-details.html", predict=prediction)
+
 
 @app.route('/')
 def index():
@@ -30,23 +50,6 @@ def about():
 def predict_page():
     return render_template("predict.html") 
          
-@app.route('/predict', methods=['POST'])
-def predict_route():
-    if request.method == 'POST':
-        f = request.files['pc_image']
-        upload_path = os.path.join('static/uploads', f.filename)
-        f.save(upload_path)
-
-        img = load_img(upload_path, target_size=(224, 224))
-        img_array = img_to_array(img)
-        img_array = np.expand_dims(img_array, axis=0)
-
-        prediction_index = np.argmax(model.predict(img_array), axis=1)[0]
-        prediction_label = index[prediction_index]
-
-        return render_template("portfolio-details.html", predict=prediction_label)
-
-
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
