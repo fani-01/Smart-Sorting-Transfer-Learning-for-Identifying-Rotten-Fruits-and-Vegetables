@@ -33,6 +33,7 @@ index = ['Apple_Healthy (0)', 'Apple_Rotten (1)', 'Banana_Healthy (2)', 'Banana_
          'Pomegranate_Healthy (20)', 'Pomegranate_Rotten (21)', 'Potato_Healthy (22)', 'Potato_Rotten (23)',
          'Strawberry_Healthy (24)', 'Strawberry_Rotten (25)', 'Tomato_Healthy (26)', 'Tomato_Rotten (27)']
 
+prediction = "some result"
 prediction = index[int(pred)]
 print("prediction")
 return render_template("portfolio-details.html", predict=prediction)
