@@ -1,12 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Prediction Result</title>
+  <title>Result - NutriGaze</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }   
+    nav { background-color: #333; color: white; padding: 10px 0; text-align: right; }
+    nav a { color: white; padding: 14px 16px; text-decoration: none; font-weight: bold; }
+    nav a:hover { background-color: #575757; }
+    .box {
+      background: #f2f2f2;
+      display: inline-block;
+      padding: 40px;
+      box-shadow: 2px 2px 15px #ccc;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Prediction Result:</h1>
-  <p>{{ predict }}</p>
-  <a href="/">Try another image</a>
+  <nav>
+    <span style="float: left; padding-left: 20px;">NUTRIGAZE</span>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/predict-page">Predict</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  {% if predict == "Fresh" %}
+    <h2>The item is Fresh</h2>
+  {% elif predict == "Rotten" %}
+    <h2>The item is Rotten</h2>
+  {% else %}
+    <h2>FreshEye Detection</h2>
+  {% endif %}
+
+  <div class="box">
+    <h4>Result of fruits and vegetables</h4>
+    <p>{{ predict }}</p>
+  </div>
 </body>
 </html>
