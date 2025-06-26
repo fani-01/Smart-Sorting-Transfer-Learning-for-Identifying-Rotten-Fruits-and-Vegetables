@@ -1,51 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>About - NutriGaze</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #555;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      padding: 40px;
-    }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    nav { background-color: #333; color: white; padding: 10px 0; text-align: right; }
+    nav a { color: white; padding: 14px 16px; text-decoration: none; font-weight: bold; }
+    nav a:hover { background-color: #575757; }
+    .container { padding: 40px; }
+    h2 { color: #cc0033; }
+    ul li::before { content: "\2714\0020"; color: #cc0033; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">NUTRIGAZE</div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/predict-page">Predict</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <span style="float: left; padding-left: 20px;">NUTRIGAZE</span>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/predict-page">Predict</a>
+    <a href="/contact">Contact</a>
+  </nav>
 
   <div class="container">
-    <h1>About NutriGaze</h1>
-    <p>NutriGaze is an intelligent food quality inspection tool. It uses deep learning and computer vision to identify and classify rotten vs. healthy fruits and vegetables, helping reduce waste and ensure food safety.</p>
+    <h2>Learn More <span style="color: red">About Us</span></h2>
+    <p>NutriGaze is a pioneering organization dedicated to enhancing the quality and safety of your fruits and vegetables.</p>
+
+    <ul>
+      <li>Comprehensive analysis and grading of fruits and vegetables based on ripeness and nutritional content.</li>
+      <li>Continuous monitoring of produce freshness from farm to table.</li>
+      <li>Innovative solutions to minimize food waste by identifying and separating rotten produce early in the supply chain.</li>
+    </ul>
+
+    <p>Our team is our greatest asset. We are a diverse group of experts in fields such as agricultural science, data analytics, software engineering, and food technology. Together, we bring a wealth of knowledge and experience to tackle the challenges of food quality and safety.</p>
   </div>
 </body>
 </html>
-
