@@ -26,6 +26,10 @@ def index():
 def about():
     return render_template("about.html")
 
+@app.route('/predict-page')
+def predict_page():
+    return render_template("predict.html") 
+         
 @app.route('/predict', methods=['POST'])
 def predict_route():
     if request.method == 'POST':
