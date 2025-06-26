@@ -30,8 +30,8 @@ def output():
         img_array = np.expand_dims(img_array, axis=0) / 255.0
 
         # Make prediction
-        prediction = model.predict(img_array)
-        predicted_class = np.argmax(prediction)
+    prediction = model.predict(img_array)
+    predicted_class = np.argmax(prediction)
 
         # Convert prediction to readable label (adjust if needed)
 index = ['Apple_Healthy (0)', 'Apple_Rotten (1)', 'Banana_Healthy (2)', 'Banana_Rotten (3)',
@@ -41,10 +41,11 @@ index = ['Apple_Healthy (0)', 'Apple_Rotten (1)', 'Banana_Healthy (2)', 'Banana_
          'Mango_Healthy (16)', 'Mango_Rotten (17)', 'Orange_Healthy (18)', 'Orange_Rotten (19)',
          'Pomegranate_Healthy (20)', 'Pomegranate_Rotten (21)', 'Potato_Healthy (22)', 'Potato_Rotten (23)',
          'Strawberry_Healthy (24)', 'Strawberry_Rotten (25)', 'Tomato_Healthy (26)', 'Tomato_Rotten (27)']
-        result = class_names[predicted_class]
+
+    result = class_names[predicted_class]
 
         # Render result page
-        return render_template("portfolio-details.html", predict=result)
+    return render_template("portfolio-details.html", predict=result)
 
              
 @app.route('/')
