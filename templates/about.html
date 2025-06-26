@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | NutriGaze</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>About - NutriGaze</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #555;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 40px;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <div><strong>NUTRIGAZE</strong></div>
-    <div>
+  <header>
+    <div class="logo">NUTRIGAZE</div>
+    <nav>
       <a href="/">Home</a>
-      <a href="/about" class="active">About</a>
-      <a href="/predict">Predict</a>
+      <a href="/about">About</a>
+      <a href="/predict-page">Predict</a>
       <a href="/contact">Contact</a>
-    </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>About NutriGaze</h1>
+    <p>NutriGaze is an intelligent food quality inspection tool. It uses deep learning and computer vision to identify and classify rotten vs. healthy fruits and vegetables, helping reduce waste and ensure food safety.</p>
   </div>
-
-  <!-- About Section -->
-  <section class="about-section">
-    <h2>Learn More <span class="highlight">About Us</span></h2>
-    <p class="tagline">NutriGaze is a pioneering organization dedicated to enhancing the quality and safety of your fruits and vegetables.</p>
-
-    <div class="about-content">
-      <ul>
-        <li>✔ Comprehensive analysis and grading of fruits and vegetables based on ripeness and nutritional content.</li>
-        <li>✔ Continuous monitoring of produce freshness from farm to table.</li>
-        <li>✔ Innovative solutions to minimize food waste by identifying and separating rotten produce early in the supply chain.</li>
-      </ul>
-
-      <div class="about-box">
-        <p>
-          Our team is our greatest asset. We are a diverse group of experts in fields such as agricultural science, data analytics, software engineering, and food technology.
-          Together, we bring a wealth of knowledge and experience to tackle the challenges of food quality and safety.
-        </p>
-        <a class="btn-outline" href="#">Learn More</a>
-      </div>
-    </div>
-  </section>
-
 </body>
 </html>
+
