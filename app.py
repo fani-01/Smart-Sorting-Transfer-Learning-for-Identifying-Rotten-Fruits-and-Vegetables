@@ -18,18 +18,22 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route('/predict', methods=["GET", "POST"])
-def predict():
-    if request.method == "POST":
-        image = request.files['image']
-        if image:
-            filename = secure_filename(image.filename)
-            image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            image.save(image_path)
-            model = tf.keras.models.load_model('healthy_vs_rotten.h5')
-            prediction = "Tomato Rotten (Class 27)"  # Replace with actual result
-            return render_template("result.html", image=filename, prediction=prediction)
-    return render_template("predict.html")
+@app.route('/predict', methods=['POST'])
+def predict_route():
+    if request.method == 'POST':
+        f = request.files['pc_image']
+        upload_path = os.path.join('static/uploads', f.filename)
+        f.save(upload_path)
+
+        img = load_img(upload_path, target_size=(224, 224))
+        img_array = img_to_array(img)
+        img_array = np.expand_dims(img_array, axis=0)
+
+        prediction_index = np.argmax(model.predict(img_array), axis=1)[0]
+        prediction_label = index[prediction_index]
+
+        return render_template("portfolio-details.html", predict=prediction_label)
+
 
 @app.route('/contact')
 def contact():
