@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Predict | NutriGaze</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Predict - NutriGaze</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    nav { background-color: #333; color: white; padding: 10px 0; text-align: right; }
+    nav a { color: white; padding: 14px 16px; text-decoration: none; font-weight: bold; }
+    nav a:hover { background-color: #575757; }
+    .container { padding: 40px; text-align: center; }
+    .btn { padding: 12px 24px; background: green; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
 </head>
 <body>
-  <div class="navbar">
-    <div><strong>NUTRIGAZE</strong></div>
-    <div>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/predict" class="active">Predict</a>
-      <a href="/contact">Contact</a>
-    </div>
-  </div>
+  <nav>
+    <span style="float: left; padding-left: 20px;">NUTRIGAZE</span>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/predict-page">Predict</a>
+    <a href="/contact">Contact</a>
+  </nav>
 
-  <div class="main-content">
+  <div class="container">
     <h2>Image Classification</h2>
-    <form method="POST" enctype="multipart/form-data">
-      <label>Upload Your Image :</label>
-      <input type="file" name="pc_image" accept="image/*"  required>
-      <button type="submit" class="btn">predict</button>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <p>Upload Your Image :</p>
+      <input type="file" name="pc_image" required><br><br>
+      <button class="btn" type="submit">predict</button>
     </form>
   </div>
 </body>
