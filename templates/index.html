@@ -1,90 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NutriGaze</title>
+  <title>NUTRIGAZE</title>
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: url("/static/background.jpg") no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-    }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 15px 30px;
+    body { margin: 0; font-family: Arial, sans-serif; }
+    nav { background-color: #333; color: white; padding: 10px 0; text-align: right; }
+    nav a { color: white; padding: 14px 16px; text-decoration: none; font-weight: bold; }
+    nav a:hover { background-color: #575757; }
+    .banner {
+      background: url('/static/images/banner.jpg') no-repeat center center/cover;
+      height: 90vh;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-    }
-
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav a {
+      justify-content: center;
       color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
     }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      text-align: center;
-      padding-top: 20%;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .hero .btn {
-      padding: 10px 20px;
-      background-color: #32cd32;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .hero .btn:hover {
-      background-color: #28a428;
-    }
+    .banner h1 { font-size: 3em; }
+    .banner p { font-size: 1.2em; width: 60%; text-align: center; }
+    .banner a { padding: 12px 24px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">NUTRIGAZE</div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/predict-page">Predict</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <span style="float: left; padding-left: 20px;">NUTRIGAZE</span>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/predict-page">Predict</a>
+    <a href="/contact">Contact</a>
+  </nav>
 
-  <div class="hero">
-    <h2>Welcome to <strong>NutriGaze</strong></h2>
-    <h1>GREENGUARD INSIGHTS</h1>
+  <div class="banner">
+    <h1>Welcome to <strong>NutriGaze</strong></h1>
     <p>We are a team of innovative scientists and technologists dedicated to ensuring your produce is always fresh and healthy.</p>
-    <a href="/predict-page" class="btn">GET STARTED</a>
+    <a href="/predict-page">Get Started</a>
   </div>
 </body>
 </html>
