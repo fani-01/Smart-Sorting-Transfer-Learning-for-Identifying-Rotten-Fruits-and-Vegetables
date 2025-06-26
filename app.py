@@ -6,7 +6,7 @@ import os
 import tensorflow as tf
 
 app = Flask(__name__)
-model = tf.keras.models.load_model('healthy_vs_rotten.h5')  # Make sure this file exists
+model = tf.keras.models.load_model('healthy_vs_rotten_h5')  
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
