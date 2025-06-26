@@ -18,7 +18,8 @@ def output():
         # Ensure upload directory exists
         upload_folder = "static/uploads/"
         if not os.path.exists(upload_folder):
-            os.makedirs(upload_folder)
+            os.makedirs(upload_folder, exist_ok=True)
+
 
         # Save the uploaded image
         img_path = os.path.join(upload_folder, f.filename)
