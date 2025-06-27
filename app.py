@@ -9,6 +9,8 @@ app = Flask(__name__)
 model = tf.keras.models.load_model('healthy_vs_rotten.h5')  
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+upload_folder = os.path.join('static', 'uploads')
+os.makedirs(upload_folder, exist_ok=True)
 
 @app.route('/predict', methods=['POST'])
 def output():
